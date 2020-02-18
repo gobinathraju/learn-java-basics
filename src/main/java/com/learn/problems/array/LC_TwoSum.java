@@ -1,4 +1,4 @@
-package com.learn.problems;
+package com.learn.problems.array;
 
 class LC_TwoSum {
     public static void main(String[] args) {

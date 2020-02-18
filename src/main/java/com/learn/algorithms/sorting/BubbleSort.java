@@ -32,16 +32,22 @@ public class BubbleSort {
 
     void mymethod(int numbers[]) {
         int iterations = 0;
+        boolean swapped;
         int arraySize = numbers.length;
         for (int i = 0; i < arraySize; i++) {
             iterations++;
+            swapped = false;
             for (int j = i + 1; j < arraySize; j++) {
                 if (numbers[i] > numbers[j]) {
                     int temp = numbers[i];
                     numbers[i] = numbers[j];
                     numbers[j] = temp;
                     iterations++;
+                    swapped = true;
                 }
+            }
+            if (swapped == false) {
+                break;
             }
         }
         System.out.println("My code iterations " + iterations);
@@ -50,11 +56,11 @@ public class BubbleSort {
     // Driver method to test above
     public static void main(String args[]) {
         BubbleSort ob = new BubbleSort();
-        int arr[] = {2, 1, 5, 6, 9, 7, 0, 1, 3, 2};
+        int arr[] = {10, 20, 0, 2, 1, 5, 6, 9, 7, 0, 1, 3, 2};
         ob.bubbleSort(arr);
         System.out.println("Sorted array");
         ob.printArray(arr);
-        int arr1[] = {2, 1, 5, 6, 9, 7, 0, 1, 3, 2};
+        int arr1[] = {10, 20, 0, 2, 1, 5, 6, 9, 7, 0, 1, 3, 2};
         ob.mymethod(arr1);
         ob.printArray(arr1);
 
